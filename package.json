@@ -1,7 +1,6 @@
 {
   "name": "todo-react",
   "private": true,
-  "homepage": "https://7maylord.github.io/todo-react/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
