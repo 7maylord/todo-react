@@ -59,7 +59,7 @@ function Todo(props) {
     </form>
   );
   const viewTemplate = (
-    <div className="stack-small">
+    <div className="stack-small todo-view">
       <div className="c-cb">
         <input
           id={props.id}
@@ -72,7 +72,7 @@ function Todo(props) {
           {props.name}
         </label>
       </div>
-      <div className="btn-group">
+      <div className="btn-group todo-btns">
         <button
           type="button"
           className="btn"
