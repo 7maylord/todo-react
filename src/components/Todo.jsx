@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 function usePrevious(value) {
-    const ref = useRef();
-    useEffect(() => {
-      ref.current = value;
-    });
-    return ref.current;
-  }
-  
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+
 function Todo(props) {
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState("");
@@ -38,6 +38,7 @@ function Todo(props) {
           value={newName}
           onChange={handleChange}
           ref={editFieldRef}
+          required
         />
       </div>
       <div className="btn-group">
@@ -65,6 +66,7 @@ function Todo(props) {
           type="checkbox"
           defaultChecked={props.completed}
           onChange={() => props.toggleTaskCompleted(props.id)}
+          required
         />
         <label className="todo-label" htmlFor={props.id}>
           {props.name}
@@ -97,7 +99,6 @@ function Todo(props) {
       editButtonRef.current.focus();
     }
   }, [wasEditing, isEditing]);
-  
 
   return <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>;
 }
